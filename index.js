@@ -44,6 +44,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
+    const form = document.getElementById('formulario');
+        const confirmModal = document.getElementById('confirmModal');
+        const successModal = document.getElementById('successModal');
+
+        
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            confirmModal.style.display = 'block';
+        });
+
+        document.getElementById('closeConfirm').onclick = function() {
+            confirmModal.style.display = 'none';
+        };
+    
+        document.getElementById('confirmYes').onclick = function() {
+            successModal.style.display = 'block';
+            confirmModal.style.display = 'none';
+        };
+    
+        document.getElementById('confirmNo').onclick = function() {
+            successModal.style.display = 'none';
+            confirmModal.style.display = 'none';
+        };
+    
+        // document.getElementById('closeSuccess').onclick = function() {
+        //     successModal.style.display = 'none';
+        // };
+    
+        document.getElementById('okSuccess').onclick = function() {
+            form.submit();
+            successModal.style.display = 'none';
+        };
+    
+        // window.onclick = function(event) {
+        //     if (event.target == confirmModal || event.target == successModal) {
+        //         confirmModal.style.display = 'none';
+        //         successModal.style.display = 'none';
+        //     }
+        // };
+
 
 });
 

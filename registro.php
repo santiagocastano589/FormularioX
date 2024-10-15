@@ -12,8 +12,8 @@ try {
 
 
 
-    $query = "INSERT INTO RADICACIONCX (FecRadi, Radicador, TipDoc, Documento, Paciente, Tel1, tel2, Cups1, Cups2, Cups3, Cups4, Cups5, OtroCups, Esp, Especialista, Eps, TipoContrato, Regimen, Anestesia, FecAnestesia, Observacion, Comentarios) 
-              VALUES (:FecRadi, :Radicador, :TipDoc, :Documento, :Paciente, :Tel1, :tel2, :Cups1, :Cups2, :Cups3, :Cups4, :Cups5, :OtroCups, :Esp, :Especialista, :Eps, :TipoContrato, :Regimen, :Anestesia, :FecAnestesia, :Observacion, :Comentarios)";
+    $query = "INSERT INTO RADICACIONCX (FecRadi, Radicador, TipDoc, Documento, Paciente, Tel1, tel2, Cups1, Cups2, Cups3, Cups4, Cups5, OtroCups, OtroProcedimiento, Esp, Especialista, Eps, TipoContrato, Regimen, Anestesia, FecAnestesia, Observacion, Comentarios) 
+              VALUES (:FecRadi, :Radicador, :TipDoc, :Documento, :Paciente, :Tel1, :tel2, :Cups1, :Cups2, :Cups3, :Cups4, :Cups5, :OtroCups, :OtroProcedimiento, :Esp, :Especialista, :Eps, :TipoContrato, :Regimen, :Anestesia, :FecAnestesia, :Observacion, :Comentarios)";
 
     $stmt = $conn->prepare($query);
     
@@ -40,6 +40,7 @@ try {
     $stmt->bindParam(':FecAnestesia', $_POST['FecAnestesia']);
     $stmt->bindParam(':Observacion', $_POST['Observacion']);
     $stmt->bindParam(':Comentarios', $_POST['Comentarios']);
+    $stmt->bindParam(':OtroProcedimiento', $_POST['OtroProcedimiento']);
     $stmt->execute();
     header('Location:index.html');
 

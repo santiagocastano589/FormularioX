@@ -15,6 +15,7 @@
 body{
     width: 100%;
     height: 100vh;
+    
 }
 
 header{
@@ -25,8 +26,7 @@ header{
     align-items: center;
     border-bottom: 1px solid #0d5855;
     box-shadow: 3px 3px 10px #a3a3a3;
-    background-color: #fff;
-
+    background-color: #f7f7fd;
 }
 
 .logo{
@@ -52,6 +52,13 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* background-color: rgba(0, 0, 0, 0.1); */
+
+    /* background-color: #f7f7fd;
+opacity: 0.8;
+background-image: radial-gradient(#1aa29d 2px, #f7f7fd 2px);
+background-size: 40px 40px; */
+
 }
 .container{
     width: 100%;
@@ -191,7 +198,7 @@ input::placeholder, select::placeholder, textarea::placeholder{
 label{
     margin: 0.3rem;
     font-weight: bold;
-    border-bottom: 2px solid #ffffff93;
+    border-bottom: 2px solid #ffffff;
     text-shadow: 1px 1px 1px #000;
 }
 
@@ -233,6 +240,7 @@ footer{
     align-items: center;
     border-top: 1px solid #0d5855;
     /* box-shadow: -10px -10px 30px #1a6b67; */
+    background-color: #fff;
 }
 
 footer img{
@@ -251,109 +259,70 @@ span{
 }
 
 
-
 /* ------------------------- ESTILOS DE LA VENTANA MODAL ----------------------------- */
 
-
-.modalConfirmacion{
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 200px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.5);
-}
 
 .modal {
     display: none;
     position: fixed;
     z-index: 1;
-    padding-top: 200px;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.5);
-  }
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.7);
+}
 
-  .contenido-modal {
-    position: relative; /* Relativo con respecto al contenedor -modal- */
-    background-color: white;
-    margin: auto; /* Centrada */
-    padding: 20px 15px;
-    padding-top: 10px;
-    width: 40%;
-    height: 20rem;
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px 40px;
+    border: 1px solid #888;
+    width: 50%; 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    border-radius: 10px;
-    -webkit-animation-name: animarsuperior;
-    -webkit-animation-duration: 0.5s;
-    animation-name: animarsuperior;
-    animation-duration: 0.5s
-  }
-
-
-  /* Animación */
-  @-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-  }
-
-  @keyframes animarsuperior {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-  }
-
-  /* Botón cerrar */
-  .cerrar, .cerrar2 {
-    color: black;
-    float: left;
-    font-size: 30px;
-    font-weight: bold;
-  }
-
-  .cerrar:hover,
-  .cerrar2:hover,
-  .cerrar2:focus,
-  .cerrar:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  .botones{
+    text-align: center;
+    border-radius: 20px;
+}
+.botones{
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
-  }
-
-  .close{
+}
+.spamx{
     width: 100%;
-    height: auto;
     display: flex;
-    justify-content: flex-end;
-  }
-
-  .btnRed{
-    background-color: red;
-  }
-  .btnRed:hover{
-    border: 1px solid red;
-    color: red;
-    background-color: #fff;
-    transition: 0.5s;
-    transform: translateY(-3px);
+    justify-content: end;
 }
 
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#confirmNo{
+    background-color: red;
+}
+#confirmNo:hover{
+    transition: 0.5s;
+    transform: translateY(-3px);
+    background-color: #fff;
+    color: red;
+    border: 1px solid red;
+}
 
 /* --------------------------------- MEDIA QUERYS --------------------------------- */
 
@@ -429,6 +398,9 @@ span{
         font-size: 11px;
         text-align: center;
     }
+    .modal-content{
+        width: 70%;
+    }
 }
 
 @media(max-width:920px){
@@ -455,6 +427,9 @@ span{
     }
     .labels{
         width: 35%;
+    }
+    .modal-content{
+        width: 70%;
     }
     .data{
         width: 65%;
@@ -539,6 +514,9 @@ span{
         display: flex;
         flex-direction: column;
     }
+    .modal-content{
+        width: 80%;
+    }
     .group{
         width: 100%;
     }
@@ -589,6 +567,10 @@ span{
         width: 98%;
         margin: 10px 0;
     }
+    .modal-content{
+        width: 90%;
+        padding: 10px 20px;
+    }
     label{
         font-size: 12px;
     }
@@ -631,3 +613,6 @@ span{
         font-size: 10px;
     }
 }
+
+
+
